@@ -1,0 +1,33 @@
+server:
+  port: 5000
+spring:
+  flyway:
+    enabled: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    url: "jdbc:postgresql://awseb-e-vumrri6pgz-stack-awsebrdsdatabase-zpcmrocgnw13.ct5s6xebu3li.ca-central-1.rds.amazonaws.com:5432/ebdb"
+    dbcp2:
+      default-schema: boots
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    generate-ddl: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      platform: postgres
+      mode: always
+      continue-on-error: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+---
+
+jwt:
+  secret: qwepuisdhfaksdjflsdfn12321___**
+  expiration: 600000
